@@ -14,8 +14,9 @@ body, header, nav, main, footer, img, h1, h3, h2, h5, figure, figcaption, articl
         
 }
 
-
+/* Style for background */
 body {
+ 
  background-color: black;
 }
 
@@ -24,11 +25,10 @@ img {
     max-width: 100%;
     display: inline;
 }      
-
-
 .header-img {
   max-width: 50%;
   display: grid;
+  box-shadow: 3px 3px #00ffcc, -1em 0 .4em #ff3333;
 }
 
 
@@ -37,51 +37,282 @@ img {
   font-family: 'Roboto', sans-serif;
 }
 
-
-/* Style the side navigation */
-.sidenav {
-  height: 100%;
-  width: 200px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: gray;
-  overflow-x: hidden;
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
+.grid {
+display: grid;
+grid-template-columns: repeat (3, 1fr);
+grid-template-rows: 30% 200px auto;
+grid-gap: 1em;
 }
-.sidenav ul {
-	list-style: none;
+
+
+header,
+nav,
+footer {
+
+padding: 1%;
+}
+
+header, footer {
+grid-column: 1 / 4;
+}
+
+article, section {
+min-width: 15em;
+}
+/* Style rules for header content */
+
+header {
+    
+    text-align: center;
+    font-size: 16px;
+    color: cadetblue;
+    padding-right: 20%;
+    padding-top: 5%;
+    
+}
+ 
+h1 h2{
+    font-family: 'Zen Old Mincho', serif;   
+    font-style: normal;
+    color:  black;
+}
+
+h3 h5 {
+    font-family: 'Antic', sans-serif;
+    text-decoration: none;  
+}
+   
+
+/* Style rules for navigation area */
+nav {
+    font-family: 'Roboto', sans-serif;
+    
+}
+ 
+nav ul {
+    list-style: none;
     margin: 0;
-    padding: 0%;
-    text-align: center;
-	text-decoration: none;
+    text-align: left;
 }
-	
-
-/* Side navigation links */
-.sidenav a {
-	display: block;
-    color: black;
-    text-align: center;
-    padding: 0.5em 1em;
+ 
+nav li {
+    display: inline-block;
+    font-size: 12pt;   
+    
+}
+ 
+nav li a {
+    
+    display: block;
+    color: gray;
+    text-align: left;
+    padding: 0%;
+    
     text-decoration: none;    
-    font-size: 20px;
+    font-size: 12pt;    
     list-style-type: none;
 }
 
-/* Change color on hover */
-.sidenav a:hover {
+/* STyle rules for links in page */
+
+a:link {
   text-decoration: none;
-  color: aquamarine;
+  color:  thistle;
 }
 
 
 
-/* Style the content */
-.content {
-  margin-left: 200px;
-  padding-left: 20px;
+
+a:hover {
+  text-decoration: none;
+  color: aquamarine
 }
 
+
+
+
+/* Style rules for main content */
+
+main {
+    padding: 10% 2%;
+    overflow: auto;
+    font-family: 'Roboto', sans-serif;
+    color: lightsteelblue;
+    text-align: left;
+    white-space: pre-line;
+}
+
+
+main p {
+    font-size: 1.25em;
+    font-family: 'Roboto', sans-serif;
+    float: left;
+    color: lightsteelblue;
+    }
+ 
+
+/* Style rules for contact content */
+
+#contact {
+    text-align: center;
+    
+}
+ 
+#contact a {
+    color:  thistle;
+    text-decoration: none;
+    font-weight: bold;
+    text-decoration: none;
+}
+.round {
+  border-radius: 5px;
+  border: 2px solid whitesmoke;
+  padding: 10px; 
+  width: 200px;
+  height: 150px;
+  background-color:   #cccccc;
+  align-items: center;  
+}
+ 
+
+
+/* Style rules for footer content */
+
+footer {
+    text-align: center;
+    font-size: 0.65em;
+    clear: left;
+    color: thistle;  
+}
+ 
+footer a {
+    color: #ff1a1a;
+    text-decoration: none;
+}
+
+.b{
+   margin-left: 100px;
+   padding:10px;
+}
+figure {
+  display: grid;
+  align-items: center;
+}
+
+figcaption {
+  text-align:left;
+  display: grid;
+  font-family: 'Roboto', sans-serif;
+  padding: 1%;
+  font-size: 2em;
+}
+
+
+
+/* Style rules for mobile viewport */
+@media screen and (max-width:640px), print {
+tab-desk {
+    display: inline-block;
+    margin: auto;
+}
+body {
+  background-color: black  !important;
+}
+nav {
+  background-color: black !important;
+}
+nav li{
+    border-top: none;
+    display: inline-block;
+    font-size: 10pt;
+    border-right: 1px solid black;
+}
+  nav li a {
+    display: block;
+    color: aquamarine;
+   
+  }
+
+}
+
+
+
+/* Media Query for Tablet Viewport */
+@media screen and (min-width: 650px), print { 
+  
+  
+  /* Tablet Viewport: Show tab-desk class, hide mobile class */  
+  .tablet {
+    display: block;
+  } 
+  .mobile {
+    display: none;  
+  } 
+body {
+  background-color: gray !important;
+}
+nav {
+  background-color: gray !important;
+}
+}
+
+   /* Tablet Viewport: Style rule for header content */     
+  span.tab-desk {
+    display: inline;
+  }
+  nav li{
+    border-top: none;
+    display: inline-block;
+    font-size: 1.5em;
+    
+    
+  }
+  nav li a {
+    display: block;
+    color: aquamarine;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+  }
+
+  /* Table Viewport: Style rules for nav area */
+
+
+  nav li a:hover {
+    color: #ff5c33;
+    
+  }
+  nav li:last-child {
+    border-right: none;
+  }
+
+
+@media screen and (min-width: 992px) , print {
+  /*Desktop Viewport: Style rule for header */
+  body {
+  background-color: black !important;
+  }
+  nav {
+  background-color: black !important;
+}
+  header{
+    padding:2%
+  }
+  
+  /* Desktop Viewport: Style rules for nav area */
+  nav li a {
+    display: block;
+    color: #ff5c33;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1.5em; 
+    padding-right: 1.5em;
+    
+  }
+
+  nav li a:hover {
+    color: aquamarine;
+    background-color: black;
+  }
+}
