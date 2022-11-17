@@ -1,1 +1,87 @@
+/*
+Student Name: Sarah Johnson
+File Name: styles.css
+Current Date: 10/02/2020
+*/
+
+
+/* CSS Reset */
+
+body, header, nav, main, footer, img, h1, h3, h2, h5, figure, figcaption, article, section {
+    margin: 0;
+    padding: 0;
+    border: 0;
+        
+}
+
+
+body {
+ background-color: black;
+}
+
+/* Style rule for images */
+img {
+    max-width: 100%;
+    display: inline;
+}      
+
+
+.header-img {
+  max-width: 50%;
+  display: grid;
+}
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* Style the side navigation */
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: gray;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+.sidenav ul {
+	list-style: none;
+    margin: 0;
+    padding: 0%;
+    text-align: center;
+	text-decoration: none;
+}
+	
+
+/* Side navigation links */
+.sidenav a {
+	display: block;
+    color: black;
+    text-align: center;
+    padding: 0.5em 1em;
+    text-decoration: none;    
+    font-size: 20px;
+    list-style-type: none;
+}
+
+/* Change color on hover */
+.sidenav a:hover {
+  text-decoration: none;
+  color: aquamarine;
+}
+
+
+
+/* Style the content */
+.content {
+  margin-left: 200px;
+  padding-left: 20px;
+}
 
