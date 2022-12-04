@@ -7,7 +7,7 @@ Current Date: 10/02/2020
 
 /* CSS Reset */
 
-body, header, nav, main, footer, img, h1, h3, h2, h5, figure, figcaption, article, section {
+body, header, nav, main, footer, img, h1, h3, h2, h5, figure, figcaption, article, section, table {
     margin: 0;
     padding: 0;
     border: 0;
@@ -16,8 +16,7 @@ body, header, nav, main, footer, img, h1, h3, h2, h5, figure, figcaption, articl
 
 /* Style for background */
 body {
- 
- background-color: black;
+  background-color: black;
 }
 
 /* Style rule for images */
@@ -27,8 +26,8 @@ img {
 }      
 .header-img {
   max-width: 50%;
-  display: grid;
-  box-shadow: 3px 3px #00ffcc, -1em 0 .4em #ff3333;
+  display: block;
+  box-shadow: 3px 1px #ff3333, -1em 0 2em #00ffcc;
 }
 
 
@@ -37,12 +36,7 @@ img {
   font-family: 'Roboto', sans-serif;
 }
 
-.grid {
-display: grid;
-grid-template-columns: repeat (3, 1fr);
-grid-template-rows: 30% 200px auto;
-grid-gap: 1em;
-}
+
 
 
 header,
@@ -53,7 +47,7 @@ padding: 1%;
 }
 
 header, footer {
-grid-column: 1 / 4;
+grid-column: 1 / span 3;
 }
 
 article, section {
@@ -66,7 +60,7 @@ header {
     text-align: center;
     font-size: 16px;
     color: cadetblue;
-    padding-right: 20%;
+    padding-right: 10%;
     padding-top: 5%;
     
 }
@@ -103,11 +97,10 @@ nav li {
  
 nav li a {
     
-    display: block;
+    display: inline;
     color: gray;
     text-align: left;
     padding: 0%;
-    
     text-decoration: none;    
     font-size: 12pt;    
     list-style-type: none;
@@ -134,8 +127,9 @@ a:hover {
 /* Style rules for main content */
 
 main {
-    padding: 10% 2%;
-    overflow: auto;
+    grid-column: 1 / span 3;
+    padding: 1%;
+    margin: 0 auto;
     font-family: 'Roboto', sans-serif;
     color: lightsteelblue;
     text-align: left;
@@ -206,13 +200,96 @@ figcaption {
   padding: 1%;
   font-size: 2em;
 }
+/* Style for the table element */
+table, tr, td, th, tbody {
+  border-collapse: collapse;
+  padding: 2%;
+  font-family: sans-serif;
+
+}
 
 
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 80%;
+}
+
+ tr {
+    border: none;
+    padding: 2%; 
+}
+ 
+th {
+    background-color: black;
+    color: cornflowerblue;
+    font-size: 1.15em;
+    text-align: center;
+}
+ 
+td {
+  
+  text-align: left; 
+}
+
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.contactform {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 /* Style rules for mobile viewport */
-@media screen and (max-width:640px), print {
-tab-desk {
-    display: inline-block;
+@media screen and (max-width:580px), print {
+.mobile {
+    display: block;
     margin: auto;
 }
 body {
@@ -222,14 +299,15 @@ nav {
   background-color: black !important;
 }
 nav li{
-    border-top: none;
+    border: none;
     display: inline-block;
     font-size: 10pt;
-    border-right: 1px solid black;
+    
 }
   nav li a {
     display: block;
     color: aquamarine;
+    
    
   }
 
@@ -238,7 +316,7 @@ nav li{
 
 
 /* Media Query for Tablet Viewport */
-@media screen and (min-width: 650px), print { 
+@media screen and (min-width: 590px), print { 
   
   
   /* Tablet Viewport: Show tab-desk class, hide mobile class */  
